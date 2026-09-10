@@ -7,25 +7,30 @@ export default function Logo({
   className?: string;
   variant?: "light" | "dark";
 }) {
-  const nameColor = variant === "dark" ? "text-white" : "text-primary-900";
+  const markColor = variant === "dark" ? "text-white" : "text-primary-900";
   const subColor = variant === "dark" ? "text-neutral-400" : "text-neutral-500";
 
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-2.5 ${className}`}
+      className={`group inline-flex shrink-0 flex-col items-start gap-0.5 ${className}`}
       aria-label="Sigma Business Finance — home"
     >
-      <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary-700 to-secondary-500 text-lg font-bold text-white shadow-sm shadow-primary-700/30">
-        Σ
-      </span>
-      <span className="flex flex-col leading-none">
-        <span className={`text-lg font-bold tracking-tight ${nameColor}`}>
-          Sigma
-        </span>
-        <span className={`text-[11px] font-semibold uppercase tracking-wider ${subColor}`}>
-          Business Finance
-        </span>
+      <svg
+        className={`h-7 w-auto shrink-0 ${markColor}`}
+        viewBox="0 0 105 33"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden
+      >
+        <path d="M19.4719 6.92324C19.4719 9.30991 17.608 11.2437 15.3109 11.2437H7.26977C5.11864 11.2437 4.16568 12.4524 4.16568 14.1735C4.16568 15.6754 4.90602 17.1033 7.69194 17.1033H13.2638C19.7529 17.1033 21.2692 20.8388 21.2692 24.3906C21.2692 28.5661 19.1181 31.6409 13.6859 31.6409H0.425259C0.425259 29.2542 2.28927 27.3204 4.5863 27.3204H13.8272C16.0838 27.3204 17.1066 26.0392 17.1066 24.2439C17.1066 22.6324 16.2949 21.1675 13.3678 21.1675H7.83008C1.48221 21.1675 0 17.4691 0 14.0269C0 9.92552 2.11543 6.92163 7.40635 6.92163H19.4689L19.4719 6.92324Z" fill="currentColor" />
+        <path d="M26.8628 11.2438V31.641C24.5642 31.641 22.7018 29.7055 22.7018 27.3205V6.92334C25.0003 6.92334 26.8628 8.85879 26.8628 11.2438Z" fill="currentColor" />
+        <path d="M48.8599 6.92324C48.8599 9.30991 46.9959 11.2437 44.6989 11.2437H39.0557C34.4709 11.2437 32.461 13.624 32.461 19.2998C32.461 24.9756 34.4368 27.3204 39.0557 27.3204H43.0056C45.3337 27.3204 46.3208 25.8555 46.3208 23.8411C46.3208 21.8267 45.3337 20.6921 43.3936 20.6921H41.736C39.7293 20.6921 38.1027 19.0033 38.1027 16.9196H43.8158C48.0482 16.9196 50.1295 19.6301 50.1295 23.9136C50.1295 28.197 48.0482 31.6409 42.7231 31.6409H39.0557C32.1072 31.6409 28.2984 27.5766 28.2984 19.2998C28.2984 11.023 32.1429 6.92163 39.0557 6.92163H48.8599V6.92324Z" fill="currentColor" />
+        <path d="M49.6266 31.6424L56.0055 11.0615C56.7986 8.24136 58.1117 6.48318 60.8588 6.48318C63.9117 6.48318 65.4373 8.64424 65.4373 11.8673V26.479C65.4373 27.3219 65.8642 27.8714 66.4757 27.8714C67.0251 27.8714 67.4519 27.4685 67.635 26.8465L72.6404 4.57835C73.4335 1.75818 74.7465 0 77.4936 0C80.5449 0 82.0722 2.16106 82.0722 5.38412V31.644C80.0669 31.644 78.4404 29.6924 78.4404 27.2864V5.60328C78.4404 4.725 78.0135 4.17547 77.402 4.17547C76.8837 4.17547 76.4553 4.61542 76.2722 5.23747L71.2668 27.5056C70.4737 30.3258 69.1296 32.0839 66.3841 32.0839C63.3622 32.0839 61.8366 29.9229 61.8366 26.6644V12.0897C61.8366 11.2114 61.3787 10.6619 60.7688 10.6619C60.2194 10.6619 59.8531 11.1018 59.6389 11.7239L54.812 27.3202C54.0065 29.9213 51.9392 31.6456 49.6282 31.6456L49.6266 31.6424Z" fill="currentColor" />
+        <path d="M82.1218 31.6426L89.3559 9.66939C90.1195 7.36168 91.5225 6.4834 93.6907 6.4834C95.859 6.4834 97.231 7.36168 97.9635 9.66939L104.923 31.6426C102.517 31.6426 100.361 29.8554 99.5125 27.1545L94.667 11.7579C94.4838 11.1713 94.1486 10.9151 93.6597 10.9151C93.1708 10.9151 92.8356 11.1713 92.6214 11.7579L87.5447 27.2141C86.6662 29.886 84.5166 31.6426 82.1218 31.6426Z" fill="currentColor" />
+      </svg>
+      <span className={`hidden whitespace-nowrap pl-0.5 text-[10px] font-semibold uppercase tracking-wider sm:block ${subColor}`}>
+        Business Finance
       </span>
     </Link>
   );
