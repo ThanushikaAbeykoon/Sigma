@@ -3,11 +3,12 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { ChevronDown, Info, Mail, Menu, Users, X, Phone } from "lucide-react";
+import { ChevronDown, Info, Mail, Menu, Users, X } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import Button from "@/components/ui/Button";
 import NavDropdown from "@/components/layout/NavDropdown";
 import AboutDropdownVisual from "@/components/layout/AboutDropdownVisual";
+import SearchBar from "@/components/layout/SearchBar";
 import { solutions } from "@/data/solutions";
 import { industries } from "@/data/industries";
 
@@ -85,7 +86,7 @@ export default function Header() {
       <div className="container-page relative flex h-18 items-center justify-between py-3">
         <Logo />
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1">
           <NavDropdown label="Funding Options" items={fundingItems} />
           <NavDropdown
             label="Industries"
@@ -104,21 +105,15 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-primary-50 hover:text-primary-800"
+              className="shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-primary-50 hover:text-primary-800"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href="tel:03300584444"
-            className="flex items-center gap-2 text-sm font-semibold text-neutral-700 hover:text-primary-800"
-          >
-            <Phone className="h-4 w-4" aria-hidden />
-            0330 058 4444
-          </a>
+        <div className="hidden items-center gap-2 lg:flex xl:gap-3">
+          <SearchBar className="hidden xl:block" />
           <Button href="/contact#eligibility" variant="secondary">
             Check Eligibility
           </Button>
@@ -138,6 +133,7 @@ export default function Header() {
       {open ? (
         <div className="border-t border-neutral-200 bg-neutral-50 lg:hidden">
           <nav className="container-page flex flex-col gap-1 py-4">
+            <SearchBar className="mb-3" fullWidth />
             <div>
               <button
                 type="button"
@@ -235,13 +231,6 @@ export default function Header() {
               </Link>
             ))}
             <div className="mt-2 flex flex-col gap-3 border-t border-neutral-200 pt-4">
-              <a
-                href="tel:03300584444"
-                className="flex items-center gap-2 text-sm font-semibold text-neutral-700"
-              >
-                <Phone className="h-4 w-4" aria-hidden />
-                0330 058 4444
-              </a>
               <Button href="/contact#eligibility" variant="secondary" className="w-full">
                 Check Eligibility
               </Button>
