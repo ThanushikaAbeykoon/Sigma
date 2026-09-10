@@ -14,7 +14,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-neutral-50 py-20 sm:py-28">
+    <section className="bg-neutral-50 py-20 sm:py-28" id="testimonials">
       <div className="container-page flex flex-col items-center gap-12">
         <SectionHeading
           eyebrow="Client Stories"

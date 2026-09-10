@@ -79,16 +79,16 @@ export default function SearchBar({ className = "", fullWidth = false }: SearchB
           {results.length > 0 ? (
             <ul className="max-h-96 overflow-y-auto py-2">
               {results.map((result) => (
-                <li key={result.href}>
+                <li key={`${result.href}-${result.title}`}>
                   <Link
                     href={result.href}
                     onClick={() => {
                       setOpen(false);
                       setQuery("");
                     }}
-                    className="flex items-center justify-between gap-3 px-4 py-2.5 transition-colors hover:bg-primary-50"
+                    className="flex min-w-0 items-center justify-between gap-3 px-4 py-2.5 transition-colors hover:bg-primary-50"
                   >
-                    <span className="text-sm font-medium text-neutral-900">
+                    <span className="truncate text-sm font-medium text-neutral-900">
                       {result.title}
                     </span>
                     <span className="shrink-0 text-xs font-medium text-neutral-400">
