@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { industries } from "@/data/industries";
 
@@ -15,8 +16,9 @@ export default function Industries() {
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {industries.map((industry) => (
-            <div
+            <Link
               key={industry.slug}
+              href={`/industries/${industry.slug}`}
               className="flex flex-col items-center gap-3 rounded-2xl bg-white p-6 text-center ring-1 ring-neutral-200 transition-colors hover:ring-primary-300"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-50 text-primary-700">
@@ -25,7 +27,7 @@ export default function Industries() {
               <p className="text-sm font-semibold text-neutral-800">
                 {industry.name}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

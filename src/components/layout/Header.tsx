@@ -27,7 +27,7 @@ const fundingItems = solutions.map((solution) => ({
 
 const industryItems = industries.map((industry) => ({
   key: industry.slug,
-  href: "/#industries",
+  href: `/industries/${industry.slug}`,
   icon: industry.icon,
   title: industry.name,
   description: industry.description,
@@ -186,7 +186,7 @@ export default function Header() {
                   {industries.map((industry) => (
                     <Link
                       key={industry.slug}
-                      href="/#industries"
+                      href={`/industries/${industry.slug}`}
                       className="rounded-lg px-3 py-2 text-sm text-neutral-600 hover:bg-primary-50 hover:text-primary-800"
                     >
                       {industry.name}
