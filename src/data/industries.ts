@@ -1,4 +1,22 @@
 import type { LucideIcon } from "lucide-react";
+import type { StaticImageData } from "next/image";
+import agricultureImage from "@/assets/Agriculture-Finance.jpg";
+import beautyWellbeingImage from "@/assets/Beauty&Wellbeing-Finance.jpg";
+import constructionImage from "@/assets/Construction-Finance.jpg";
+import energyImage from "@/assets/Energy-Finance.jpg";
+import garageCarSalesImage from "@/assets/Garage&Car-Sales-Finance.jpg";
+import gymsImage from "@/assets/Gyms-Finance.jpg";
+import healthcareImage from "@/assets/Healthcare-Finance.jpg";
+import hospitalityImage from "@/assets/Hospitality-Finance.jpg";
+import manufacturingEngineeringImage from "@/assets/Manufacturing&Engineering-Finance.jpg";
+import plantVehicleHireImage from "@/assets/Plant&VehicleHire-Finance.jpg";
+import printingImage from "@/assets/Printing-Finance.jpg";
+import retailImage from "@/assets/Retail-Finance.jpg";
+import serviceSectorsImage from "@/assets/ServiceSectors-Finance.jpg";
+import technologyMediaImage from "@/assets/Technology&Media-Finance.jpg";
+import transportLogisticsImage from "@/assets/Transport&Logistics-Finance.jpg";
+import wasteManagementImage from "@/assets/WasteManagement-Finance.jpg";
+import wholesaleImage from "@/assets/Wholesale-Finance.jpg";
 import {
   Armchair,
   BedDouble,
@@ -77,6 +95,7 @@ export type Industry = {
   description: string;
 
   // --- sector page: hero section ---
+  image: StaticImageData;
   heroTitle: string;
   heroDescription: string;
 
@@ -104,6 +123,7 @@ export const industries: Industry[] = [
     name: "Agriculture",
     icon: Wheat,
     description: "Enhance farming machinery and tools or upgrade property.",
+    image: agricultureImage,
     heroTitle: "Funding built for the realities of farming",
     heroDescription:
       "From machinery upgrades to smoothing out seasonal cash flow, we match farmers and agribusinesses with lenders who understand how agricultural income actually works.",
@@ -133,6 +153,7 @@ export const industries: Industry[] = [
       { question: "Can I finance used or privately sold farm machinery?", answer: "Yes. Our asset and equipment finance panel covers new and used machinery, including tractors, harvesters and equipment bought through a private sale, not just dealer purchases." },
       { question: "I already own my machinery outright — can I still raise finance against it?", answer: "Yes. Refinancing equipment you already own releases the capital tied up in it, which you can reinvest in the business, cover working capital needs, or fund an expansion." },
       { question: "How quickly can agricultural equipment finance be arranged?", answer: "Straightforward applications are often decided within 24–48 hours, with funds released shortly after acceptance — useful when equipment is needed ahead of a planting or harvest window." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Beauty & Wellbeing =====
@@ -141,6 +162,7 @@ export const industries: Industry[] = [
     name: "Beauty & Wellbeing",
     icon: Sparkles,
     description: "Loans and equipment finance to boost your beauty business.",
+    image: beautyWellbeingImage,
     heroTitle: "Funding that helps your business look its best",
     heroDescription:
       "Finance for salons, spas and wellbeing businesses looking to invest in new treatment technology, expand their space, or manage the cost of building a loyal client base.",
@@ -170,6 +192,7 @@ export const industries: Industry[] = [
       { question: "My income varies a lot month to month — is that a problem?", answer: "Not necessarily. A merchant cash advance or business cash advance repays as a percentage of your takings, so repayments naturally flex with quieter and busier periods." },
       { question: "Can I raise finance against equipment I already own?", answer: "Yes. Refinancing owned salon or spa equipment releases capital you can reinvest in new treatments, marketing or a second site." },
       { question: "Do I need to have been trading for years to qualify?", answer: "Most lenders look for a minimum trading history, though this varies by product. Check your eligibility and we'll match you to lenders suited to newer businesses where relevant." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Construction =====
@@ -178,6 +201,7 @@ export const industries: Industry[] = [
     name: "Construction",
     icon: HardHat,
     description: "Attain the machinery and vehicles you need for key projects.",
+    image: constructionImage,
     heroTitle: "Funding that keeps your projects on schedule",
     heroDescription:
       "Plant, machinery and working capital finance for contractors and construction businesses managing staged payments, retentions and rising material costs.",
@@ -207,6 +231,7 @@ export const industries: Industry[] = [
       { question: "Can I finance used plant and machinery?", answer: "Yes. Our asset finance panel covers new and used plant, including private sales, so you're not restricted to dealer purchases." },
       { question: "Can I raise finance against plant I already own?", answer: "Yes. Refinancing owned plant and machinery releases capital that can fund a new contract, cover VAT on a purchase, or manage a quiet period between jobs." },
       { question: "How quickly can plant finance be arranged before a project starts?", answer: "Straightforward applications are often decided within 24–48 hours, which can be enough time to secure equipment ahead of a contract start date." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Energy =====
@@ -215,6 +240,7 @@ export const industries: Industry[] = [
     name: "Energy",
     icon: Zap,
     description: "Increase investment in energy resources and innovation.",
+    image: energyImage,
     heroTitle: "Funding the shift to smarter, cleaner energy",
     heroDescription:
       "Asset finance and working capital for energy businesses investing in renewables, infrastructure upgrades and long-payback projects.",
@@ -244,6 +270,7 @@ export const industries: Industry[] = [
       { question: "Can I finance equipment before a project has planning or grid approval?", answer: "It depends on the lender and product, but working capital facilities can often support costs incurred during the planning and approval stages, ahead of installation finance." },
       { question: "Can I refinance energy infrastructure I already own?", answer: "Yes. Refinancing existing installations or equipment can release capital to fund the next phase of a project or cover working capital needs." },
       { question: "How quickly can larger energy infrastructure finance be arranged?", answer: "Larger facilities typically take 48–72 hours for an initial decision, with terms depending on project size, asset type and expected returns." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Garage & Car Sales =====
@@ -252,6 +279,7 @@ export const industries: Industry[] = [
     name: "Garage & Car Sales",
     icon: Car,
     description: "Business loans and leasing solutions to stay competitive.",
+    image: garageCarSalesImage,
     heroTitle: "Funding built for forecourts and workshops",
     heroDescription:
       "Stocking finance, workshop equipment and working capital for garages, dealerships and car sales businesses managing fluctuating stock and seasonal demand.",
@@ -281,6 +309,7 @@ export const industries: Industry[] = [
       { question: "Can I finance workshop equipment like lifts and diagnostic tools?", answer: "Yes. Asset finance covers new and used workshop equipment, including diagnostic machinery, ramps and hoists." },
       { question: "Vehicle sales are seasonal for us — can repayments reflect that?", answer: "Yes. A merchant cash advance repays as a percentage of card takings, which naturally eases off during quieter trading periods." },
       { question: "Can I raise finance against equipment I already own?", answer: "Yes. Refinancing owned workshop or showroom equipment releases capital to reinvest in stock or facilities." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Gyms =====
@@ -289,6 +318,7 @@ export const industries: Industry[] = [
     name: "Gyms",
     icon: Dumbbell,
     description: "Kit your gyms out with modern equipment and top instructors.",
+    image: gymsImage,
     heroTitle: "Funding built to help members — and your business — grow",
     heroDescription:
       "Equipment finance and working capital for gyms and fitness studios investing in new kit, expanding class space, or managing seasonal membership swings.",
@@ -318,6 +348,7 @@ export const industries: Industry[] = [
       { question: "Membership income dips after January — can repayments flex with that?", answer: "Yes. A merchant cash advance repays as a percentage of card takings, so repayments ease off naturally during quieter membership periods." },
       { question: "Can I raise finance against equipment I already own outright?", answer: "Yes. Refinancing owned gym equipment releases capital that can fund a new studio, refurbishment or additional class space." },
       { question: "How quickly can equipment finance be arranged for a new site opening?", answer: "Straightforward applications are often decided within 24–48 hours, which can help keep a fit-out or opening date on track." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Healthcare =====
@@ -326,6 +357,7 @@ export const industries: Industry[] = [
     name: "Healthcare",
     icon: HeartPulse,
     description: "Equipment finance and loans to improve patient care.",
+    image: healthcareImage,
     heroTitle: "Funding built around patient care",
     heroDescription:
       "Equipment and premises finance for clinics, practices and healthcare providers investing in patient care without disrupting cash flow.",
@@ -355,6 +387,7 @@ export const industries: Industry[] = [
       { question: "We wait on insurer or NHS payments — can finance help with that gap?", answer: "Yes. Invoice finance or a flexible business loan can bridge the gap between delivering care and receiving payment, keeping cash flow steady." },
       { question: "Can I raise finance against equipment I already own?", answer: "Yes. Refinancing owned clinical equipment releases capital to reinvest in new technology or premises." },
       { question: "How quickly can equipment finance be arranged for a growing practice?", answer: "Straightforward applications are often decided within 24–48 hours, helping you move quickly when new equipment or premises become available." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Hospitality =====
@@ -363,6 +396,7 @@ export const industries: Industry[] = [
     name: "Hospitality",
     icon: Hotel,
     description: "Ease seasonal cash flow issues and fund expansion plans.",
+    image: hospitalityImage,
     heroTitle: "Funding built for the ups and downs of hospitality",
     heroDescription:
       "Equipment, refurbishment and working capital finance for restaurants, hotels and hospitality businesses managing seasonal trade and rising costs.",
@@ -392,6 +426,7 @@ export const industries: Industry[] = [
       { question: "Can I finance a kitchen refit or refurbishment before the busy season?", answer: "Yes. Asset finance and business loans can fund kitchen equipment or refurbishment projects, with terms that can align to when the investment starts paying back." },
       { question: "Can I raise finance against equipment I already own?", answer: "Yes. Refinancing owned kitchen or venue equipment releases capital to fund a refurbishment or new opening." },
       { question: "How quickly can funding be arranged ahead of a seasonal peak?", answer: "Straightforward applications are often decided within 24–48 hours, which can be enough time to get equipment or refurbishment work done before a peak trading period." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Manufacturing & Engineering =====
@@ -400,6 +435,7 @@ export const industries: Industry[] = [
     name: "Manufacturing & Engineering",
     icon: Cog,
     description: "Obtain the right equipment and develop your supply chain.",
+    image: manufacturingEngineeringImage,
     heroTitle: "Funding built for production, at scale",
     heroDescription:
       "Machinery finance and working capital for manufacturers and engineering firms investing in production capacity, automation and supply chain resilience.",
@@ -429,6 +465,7 @@ export const industries: Industry[] = [
       { question: "We hold large invoices with long payment terms — can finance help?", answer: "Yes. Invoice finance releases cash tied up in unpaid customer invoices, rather than waiting 30, 60 or 90 days to get paid." },
       { question: "Can I raise finance against machinery I already own?", answer: "Yes. Refinancing owned machinery releases capital that can fund automation, expansion or working capital needs." },
       { question: "How quickly can machinery finance be arranged ahead of a new contract?", answer: "Straightforward applications are often decided within 24–48 hours, with larger facilities typically taking 48–72 hours." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Plant & Vehicle Hire =====
@@ -437,6 +474,7 @@ export const industries: Industry[] = [
     name: "Plant & Vehicle Hire",
     icon: Forklift,
     description: "Ensure you can offer the best equipment and experience.",
+    image: plantVehicleHireImage,
     heroTitle: "Funding built to keep your fleet working",
     heroDescription:
       "Asset finance and working capital for plant and vehicle hire businesses investing in fleet, depots and utilisation.",
@@ -466,6 +504,7 @@ export const industries: Industry[] = [
       { question: "Can finance help with slow-paying hire customers?", answer: "Yes. Invoice finance releases cash tied up in unpaid hire invoices, rather than waiting for customers to settle on standard terms." },
       { question: "Can I raise finance against fleet assets I already own outright?", answer: "Yes. Refinancing owned plant or vehicles releases capital to reinvest in fleet replacement or expansion." },
       { question: "How quickly can fleet finance be arranged?", answer: "Straightforward applications are often decided within 24–48 hours, useful when equipment needs to be secured quickly to meet demand." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Printing =====
@@ -474,6 +513,7 @@ export const industries: Industry[] = [
     name: "Printing",
     icon: Printer,
     description: "Increase efficiency by investing in innovative solutions.",
+    image: printingImage,
     heroTitle: "Funding built for presses, print runs and deadlines",
     heroDescription:
       "Equipment finance and working capital for print businesses investing in new presses, finishing equipment and digital capability.",
@@ -503,6 +543,7 @@ export const industries: Industry[] = [
       { question: "Our work is project-based with long client payment terms — can finance help?", answer: "Yes. Invoice finance releases cash tied up in unpaid client invoices, helping smooth cash flow between projects." },
       { question: "Can I raise finance against print equipment I already own?", answer: "Yes. Refinancing owned equipment releases capital to reinvest in new technology or working capital." },
       { question: "How quickly can equipment finance be arranged ahead of a big contract?", answer: "Straightforward applications are often decided within 24–48 hours, which can help you secure equipment in time for a new contract." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Service Sectors =====
@@ -511,6 +552,7 @@ export const industries: Industry[] = [
     name: "Service Sectors",
     icon: Briefcase,
     description: "Financing options to fund office, asset and staffing needs.",
+    image: serviceSectorsImage,
     heroTitle: "Funding built around how service businesses grow",
     heroDescription:
       "Working capital and growth finance for professional and consumer service businesses managing staffing costs, client payment terms and expansion.",
@@ -540,6 +582,7 @@ export const industries: Industry[] = [
       { question: "Can I get finance to hire ahead of new client work starting?", answer: "Yes. A business loan or revolving credit facility can provide working capital to fund recruitment ahead of new revenue landing." },
       { question: "Do I need physical assets to qualify for finance?", answer: "No. Many service businesses qualify for unsecured business loans or revenue-based facilities without needing to secure finance against physical assets." },
       { question: "How quickly can working capital be arranged?", answer: "Most eligibility checks take under 60 seconds, with decisions on many facilities following within 24–48 hours." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Waste Management =====
@@ -548,6 +591,7 @@ export const industries: Industry[] = [
     name: "Waste Management",
     icon: Recycle,
     description: "Upgrade plant facilities and invest in greener solutions.",
+    image: wasteManagementImage,
     heroTitle: "Funding the infrastructure behind cleaner operations",
     heroDescription:
       "Vehicle and equipment finance for waste management and recycling businesses investing in fleet, processing capacity and compliance.",
@@ -577,6 +621,7 @@ export const industries: Industry[] = [
       { question: "Can I finance used vehicles and equipment?", answer: "Yes. Our panel covers new and used vehicles and processing equipment, including private sales." },
       { question: "Can I raise finance against fleet or equipment I already own?", answer: "Yes. Refinancing owned assets releases capital to reinvest in fleet expansion or processing capacity." },
       { question: "How quickly can equipment finance be arranged?", answer: "Straightforward applications are often decided within 24–48 hours, with larger facilities typically taking 48–72 hours." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Retail =====
@@ -585,6 +630,7 @@ export const industries: Industry[] = [
     name: "Retail",
     icon: ShoppingBag,
     description: "Asset finance and cash advances for in-store and online needs.",
+    image: retailImage,
     heroTitle: "Funding built for footfall, stock and seasonal peaks",
     heroDescription:
       "Working capital and equipment finance for retailers managing stock cycles, seasonal peaks and the shift to online and omnichannel selling.",
@@ -614,6 +660,7 @@ export const industries: Industry[] = [
       { question: "Our sales are seasonal — can repayments reflect that?", answer: "Yes. A merchant cash advance repays as a percentage of card takings, so repayments naturally rise and fall with your trading calendar." },
       { question: "Can finance help fund a new store opening?", answer: "Yes. Business loans and commercial property finance can support fit-out, deposit and stock costs for a new location." },
       { question: "How quickly can working capital be arranged before a peak period?", answer: "Most eligibility checks take under 60 seconds, with decisions on many facilities following within 24 hours." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Technology & Media =====
@@ -622,6 +669,7 @@ export const industries: Industry[] = [
     name: "Technology & Media",
     icon: Monitor,
     description: "Hardware and software upgrades to power hybrid working.",
+    image: technologyMediaImage,
     heroTitle: "Funding built for building and shipping products",
     heroDescription:
       "Working capital and growth finance for technology and media businesses investing in development, infrastructure and scale ahead of revenue.",
@@ -651,6 +699,7 @@ export const industries: Industry[] = [
       { question: "We invoice clients on long payment terms — can finance help?", answer: "Yes. Invoice finance releases cash tied up in unpaid client invoices, which is common for agencies and project-based technology businesses." },
       { question: "Can finance cover ongoing infrastructure and hosting costs?", answer: "Working capital facilities such as a revolving credit line can be drawn on flexibly to cover ongoing operational costs like infrastructure and hosting." },
       { question: "How quickly can working capital be arranged?", answer: "Most eligibility checks take under 60 seconds, with decisions on many facilities following within 24–48 hours." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Transport & Logistics =====
@@ -659,6 +708,7 @@ export const industries: Industry[] = [
     name: "Transport & Logistics",
     icon: Truck,
     description: "Overcome supply chain issues and meet vehicle requirements.",
+    image: transportLogisticsImage,
     heroTitle: "Funding that keeps your fleet moving",
     heroDescription:
       "Vehicle finance and working capital for transport and logistics businesses managing fleet replacement, fuel costs and long customer payment terms.",
@@ -688,6 +738,7 @@ export const industries: Industry[] = [
       { question: "We work on long customer payment terms — can finance help?", answer: "Yes. Invoice finance releases cash tied up in unpaid freight or logistics invoices, rather than waiting 30, 60 or 90 days to get paid." },
       { question: "Can I raise finance against vehicles I already own outright?", answer: "Yes. Refinancing owned fleet vehicles releases capital to reinvest in fleet expansion or working capital." },
       { question: "How quickly can fleet finance be arranged?", answer: "Straightforward applications are often decided within 24–48 hours, useful when a vehicle needs to be replaced quickly to keep routes running." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
   // ===== Wholesale =====
@@ -696,6 +747,7 @@ export const industries: Industry[] = [
     name: "Wholesale",
     icon: Warehouse,
     description: "Bolster your warehouses and maintain a healthy inventory.",
+    image: wholesaleImage,
     heroTitle: "Funding built around stock, scale and supply",
     heroDescription:
       "Working capital and stock finance for wholesalers and distributors managing bulk purchasing, warehousing and customer payment terms.",
@@ -725,6 +777,7 @@ export const industries: Industry[] = [
       { question: "We sell on trade credit terms — can finance help with the payment gap?", answer: "Yes. Invoice finance releases cash tied up in unpaid trade customer invoices, rather than waiting on standard 30–90 day terms." },
       { question: "Can finance support a warehouse expansion or move?", answer: "Yes. Commercial property and asset finance can support the cost of expanding, relocating or fitting out warehouse space." },
       { question: "How quickly can working capital be arranged?", answer: "Most eligibility checks take under 60 seconds, with decisions on many facilities following within 24–48 hours." },
+      { question: "Will checking my eligibility affect my credit score?", answer: "No. Our initial eligibility check uses a soft search that has no impact on your personal or business credit score. You'll only trigger a full credit check if you choose to proceed with a formal application." },
     ],
   },
 ];
