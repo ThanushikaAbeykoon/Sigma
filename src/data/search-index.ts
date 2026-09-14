@@ -73,7 +73,7 @@ const pageResults: SearchResult[] = [
       "let's find the right funding for your business",
       "check your eligibility online or send us a message and a funding specialist will be in touch within one working day",
       "send a message prefer to just ask a question fill in the form below and our team will get back to you directly",
-      "call us 0330 058 4444",
+      "call us 0151 837 3528",
       "email us hello@sigmabusinessfinance.co.uk",
       "visit us 128 sigma house london ec2a 4bx",
       "opening hours monday friday 9am 6pm",

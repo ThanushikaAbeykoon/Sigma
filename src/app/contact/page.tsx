@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const details = [
-  { icon: Phone, label: "Call us", value: "0330 058 4444", href: "tel:03300584444" },
+  { icon: Phone, label: "Call us", value: "0151 837 3528", href: "tel:01518373528" },
   {
     icon: Mail,
     label: "Email us",

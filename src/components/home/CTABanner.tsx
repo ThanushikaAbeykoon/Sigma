@@ -21,9 +21,9 @@ export default function CTABanner() {
             Check Eligibility
             <ArrowRight className="h-4 w-4" />
           </Button>
-          <Button href="tel:03300584444" variant="white" size="lg">
+          <Button href="tel:01518373528" variant="white" size="lg">
             <PhoneCall className="h-4 w-4" />
-            0330 058 4444
+            0151 837 3528
           </Button>
         </div>
       </div>
