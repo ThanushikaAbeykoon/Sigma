@@ -3,11 +3,8 @@ import {
   ArrowRight,
   CalendarClock,
   CheckCircle2,
-  Clock,
-  Lock,
   Percent,
   RefreshCw,
-  SearchCheck,
   TrendingUp,
 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
@@ -15,7 +12,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import Accordion from "@/components/ui/Accordion";
 import CTABanner from "@/components/home/CTABanner";
-import EligibilityForm from "@/components/home/EligibilityForm";
+import CheckEligibilityButton from "@/components/eligibility/CheckEligibilityButton";
 import { solutions } from "@/data/solutions";
 import type { Industry } from "@/data/industries";
 
@@ -23,24 +20,6 @@ const trustBullets = [
   "No impact on credit score",
   "Whole-of-market panel",
   "Dedicated account manager",
-];
-
-const eligibilityPoints = [
-  {
-    icon: Clock,
-    title: "60-second check",
-    description: "Answer four quick questions to see what you qualify for.",
-  },
-  {
-    icon: Lock,
-    title: "No credit check required",
-    description: "A soft search only — your credit score is never affected.",
-  },
-  {
-    icon: SearchCheck,
-    title: "Whole-of-market search",
-    description: "We instantly compare offers from 60+ specialist lenders.",
-  },
 ];
 
 const benefits = [
@@ -88,10 +67,10 @@ export default function SectorPageTemplate({ industry }: SectorPageTemplateProps
         image={industry.image}
       >
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Button href="#eligibility" variant="secondary" size="lg">
+          <CheckEligibilityButton size="lg">
             Check Eligibility
             <ArrowRight className="h-4 w-4" />
-          </Button>
+          </CheckEligibilityButton>
           <Button href="tel:01518373528" variant="white" size="lg">
             0151 837 3528
           </Button>
@@ -106,38 +85,6 @@ export default function SectorPageTemplate({ industry }: SectorPageTemplateProps
           ))}
         </div>
       </PageHero>
-
-      <section className="bg-white py-20 sm:py-28" id="eligibility">
-        <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
-          <div className="flex flex-col gap-8">
-            <SectionHeading
-              eyebrow="Check Your Eligibility"
-              title={`See what ${industry.name.toLowerCase()} funding you qualify for in 60 seconds`}
-              description="No paperwork, no obligation, and it won't affect your credit score — just a quick, honest read on your options."
-            />
-
-            <div className="flex flex-col gap-5">
-              {eligibilityPoints.map((point) => (
-                <div key={point.title} className="flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700">
-                    <point.icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="font-semibold text-neutral-900">
-                      {point.title}
-                    </p>
-                    <p className="text-sm leading-relaxed text-neutral-600">
-                      {point.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <EligibilityForm />
-        </div>
-      </section>
 
       <section className="py-20 sm:py-28">
         <div className="container-page flex flex-col gap-12">

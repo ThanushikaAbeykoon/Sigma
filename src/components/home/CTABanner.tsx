@@ -1,5 +1,6 @@
 import { ArrowRight, PhoneCall } from "lucide-react";
 import Button from "@/components/ui/Button";
+import CheckEligibilityButton from "@/components/eligibility/CheckEligibilityButton";
 
 export default function CTABanner() {
   return (
@@ -17,10 +18,10 @@ export default function CTABanner() {
           in under a minute — no cost, no obligation.
         </p>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Button href="/contact#eligibility" variant="secondary" size="lg">
+          <CheckEligibilityButton size="lg">
             Check Eligibility
             <ArrowRight className="h-4 w-4" />
-          </Button>
+          </CheckEligibilityButton>
           <Button href="tel:01518373528" variant="white" size="lg">
             <PhoneCall className="h-4 w-4" />
             0151 837 3528

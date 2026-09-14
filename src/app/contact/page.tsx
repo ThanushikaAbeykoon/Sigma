@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { CheckCircle2, Clock, Mail, MapPin, Phone } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
-import EligibilityForm from "@/components/home/EligibilityForm";
 import ContactForm from "@/components/contact/ContactForm";
+import ApplyNowModal from "@/components/contact/ApplyNowModal";
+
+const applyBenefits = [
+  "Decisions in as little as 24–48 hours",
+  "Whole-of-market panel of 60+ lenders",
+  "No upfront fees",
+];
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -29,18 +35,28 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Get In Touch"
         title="Let's find the right funding for your business"
-        description="Check your eligibility online, or send us a message and a funding specialist will be in touch within one working day."
+        description="Apply online in minutes, or send us a message and a funding specialist will be in touch within one working day."
       />
 
       <section className="py-20 sm:py-28">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col gap-8">
+          <div id="eligibility" className="scroll-mt-24 flex flex-col gap-8">
             <SectionHeading
-              eyebrow="Check Eligibility"
-              title="See what you qualify for"
-              description="Takes about 60 seconds and won't affect your credit score."
+              eyebrow="Apply Now"
+              title="Ready to get funded?"
+              description="Start your application in minutes — no obligation, and a funding specialist will be in touch within one working day."
             />
-            <EligibilityForm id="eligibility" />
+            <div className="flex flex-col gap-6 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-8">
+              <ul className="flex flex-col gap-3">
+                {applyBenefits.map((benefit) => (
+                  <li key={benefit} className="flex items-start gap-2.5 text-sm text-neutral-700">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary-700" />
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+              <ApplyNowModal />
+            </div>
           </div>
 
           <div className="flex flex-col gap-8">

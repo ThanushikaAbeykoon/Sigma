@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Button from "@/components/ui/Button";
+import CheckEligibilityButton from "@/components/eligibility/CheckEligibilityButton";
 
 export default function Hero() {
   return (
@@ -47,10 +48,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button href="/contact#eligibility" variant="secondary" size="lg">
+            <CheckEligibilityButton size="lg">
               Check Your Eligibility
               <ArrowRight className="h-4 w-4" />
-            </Button>
+            </CheckEligibilityButton>
             <Button href="/funding-options" variant="white" size="lg">
               Explore Solutions
             </Button>

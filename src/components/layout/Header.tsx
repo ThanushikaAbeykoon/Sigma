@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown, Info, Mail, Menu, Users, X } from "lucide-react";
 import Logo from "@/components/ui/Logo";
-import Button from "@/components/ui/Button";
 import NavDropdown from "@/components/layout/NavDropdown";
 import AboutDropdownVisual from "@/components/layout/AboutDropdownVisual";
 import SearchBar from "@/components/layout/SearchBar";
+import CheckEligibilityButton from "@/components/eligibility/CheckEligibilityButton";
 import { solutions } from "@/data/solutions";
 import { industries } from "@/data/industries";
 
@@ -114,9 +114,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-2 lg:flex xl:gap-3">
           <SearchBar className="hidden xl:block" />
-          <Button href="/contact#eligibility" variant="secondary">
-            Check Eligibility
-          </Button>
+          <CheckEligibilityButton />
         </div>
 
         <button
@@ -231,9 +229,7 @@ export default function Header() {
               </Link>
             ))}
             <div className="mt-2 flex flex-col gap-3 border-t border-neutral-200 pt-4">
-              <Button href="/contact#eligibility" variant="secondary" className="w-full">
-                Check Eligibility
-              </Button>
+              <CheckEligibilityButton className="w-full" onOpen={() => setOpen(false)} />
             </div>
           </nav>
         </div>

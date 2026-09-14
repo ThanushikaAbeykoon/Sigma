@@ -60,9 +60,9 @@ const pageResults: SearchResult[] = [
   },
   {
     href: "/contact#eligibility",
-    title: "Check Eligibility",
+    title: "Apply Now",
     category: "Page",
-    keywords: "eligibility eligible check qualify apply application calculator see what you qualify for takes about 60 seconds and won't affect your credit score",
+    keywords: "apply now application ready to get funded start your application in minutes eligibility eligible check qualify",
   },
   {
     href: "/contact",
@@ -71,7 +71,7 @@ const pageResults: SearchResult[] = [
     keywords: [
       "contact phone email office",
       "let's find the right funding for your business",
-      "check your eligibility online or send us a message and a funding specialist will be in touch within one working day",
+      "apply online in minutes or send us a message and a funding specialist will be in touch within one working day",
       "send a message prefer to just ask a question fill in the form below and our team will get back to you directly",
       "call us 0151 837 3528",
       "email us hello@sigmabusinessfinance.co.uk",

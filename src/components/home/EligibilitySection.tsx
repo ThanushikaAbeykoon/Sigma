@@ -1,6 +1,6 @@
-import { Clock, Lock, SearchCheck } from "lucide-react";
-import EligibilityForm from "@/components/home/EligibilityForm";
+import { Clock, Lock, SearchCheck, Sparkles } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
+import CheckEligibilityButton from "@/components/eligibility/CheckEligibilityButton";
 
 const points = [
   {
@@ -50,7 +50,21 @@ export default function EligibilitySection() {
           </div>
         </div>
 
-        <EligibilityForm id="eligibility" />
+        <div className="flex flex-col items-center gap-6 rounded-3xl border border-primary-100 bg-neutral-50 p-10 text-center shadow-xl shadow-primary-900/5 sm:p-12">
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-700">
+            <Sparkles className="h-7 w-7" />
+          </span>
+          <div>
+            <h3 className="text-xl font-bold text-neutral-900">
+              Get your instant estimate
+            </h3>
+            <p className="mt-2 max-w-sm text-sm leading-relaxed text-neutral-600">
+              Answer a few quick questions and see what you could borrow —
+              no paperwork, no obligation.
+            </p>
+          </div>
+          <CheckEligibilityButton size="lg" />
+        </div>
       </div>
     </section>
   );
