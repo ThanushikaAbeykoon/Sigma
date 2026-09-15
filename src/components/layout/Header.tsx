@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { ChevronDown, Info, Mail, Menu, Users, X } from "lucide-react";
+import { ChevronDown, Info, Menu, Users, X } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import NavDropdown from "@/components/layout/NavDropdown";
 import AboutDropdownVisual from "@/components/layout/AboutDropdownVisual";
@@ -41,13 +41,6 @@ const aboutItems = [
     icon: Info,
     title: "About Us",
     description: "Learn more about Sigma Business Finance and what makes us a leading finance partner.",
-  },
-  {
-    key: "contact",
-    href: "/contact",
-    icon: Mail,
-    title: "Contact Us",
-    description: "Get in touch with us for all your finance-related queries.",
   },
   {
     key: "careers",
