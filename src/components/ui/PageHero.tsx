@@ -27,12 +27,26 @@ export default function PageHero({ eyebrow, title, description, image, children 
             className="absolute inset-0 bg-gradient-to-r from-primary-950 via-primary-950/70 to-transparent"
             aria-hidden
           />
+          <div
+            className="pointer-events-none absolute -top-20 right-0 h-72 w-72 animate-float-blob rounded-full bg-secondary-500/20 blur-3xl"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -bottom-24 left-1/3 h-64 w-64 animate-float-blob-slow rounded-full bg-primary-500/20 blur-3xl"
+            aria-hidden
+          />
         </>
       ) : (
-        <div
-          className="pointer-events-none absolute -top-20 right-0 h-72 w-72 rounded-full bg-secondary-500/20 blur-3xl"
-          aria-hidden
-        />
+        <>
+          <div
+            className="pointer-events-none absolute -top-20 right-0 h-72 w-72 animate-float-blob rounded-full bg-secondary-500/20 blur-3xl"
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute -bottom-24 left-0 h-64 w-64 animate-float-blob-slow rounded-full bg-primary-500/20 blur-3xl"
+            aria-hidden
+          />
+        </>
       )}
       <div className="container-page relative flex flex-col items-start gap-4">
         <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wide text-white">

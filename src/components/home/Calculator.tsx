@@ -163,7 +163,7 @@ export default function Calculator() {
     : null;
 
   return (
-    <section className="bg-neutral-50 py-20 sm:py-28">
+    <section id="loan-calculator" className="scroll-mt-24 bg-neutral-50 py-20 sm:py-28">
       <div className="container-page flex flex-col gap-12">
         <SectionHeading
           eyebrow="Repayment Calculator"

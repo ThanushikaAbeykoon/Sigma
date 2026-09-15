@@ -32,6 +32,24 @@ export default function NavDropdown({
 }: NavDropdownProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearCloseTimeout = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const handleMouseEnter = () => {
+    clearCloseTimeout();
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    clearCloseTimeout();
+    closeTimeoutRef.current = setTimeout(() => setOpen(false), 150);
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -53,8 +71,10 @@ export default function NavDropdown({
     };
   }, [open]);
 
+  useEffect(() => clearCloseTimeout, []);
+
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
