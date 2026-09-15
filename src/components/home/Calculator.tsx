@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Calculator as CalculatorIcon } from "lucide-react";
+import { ArrowRight, Calculator as CalculatorIcon, PieChart as PieChartIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import {
   ResponsiveContainer,
@@ -182,25 +182,25 @@ export default function Calculator() {
             className="flex flex-col lg:col-span-4"
           >
             <div className="flex flex-1 flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-200 sm:p-8">
-              <div className="flex items-center gap-2 text-sm font-semibold text-primary-700">
-                <CalculatorIcon className="h-4 w-4" />
+              <div className="flex items-center gap-2 text-base font-semibold text-primary-700">
+                <CalculatorIcon className="h-5 w-5" />
                 Quote Details
               </div>
 
-              <div className="mt-6 flex flex-1 flex-col justify-between gap-7">
+              <div className="mt-8 flex flex-1 flex-col justify-between gap-8">
                 <div>
                   <div className="flex items-center justify-between">
-                    <label htmlFor="loan-amount" className="text-sm font-medium text-neutral-700">
+                    <label htmlFor="loan-amount" className="text-base font-medium text-neutral-700">
                       Loan amount
                     </label>
                     <div className="relative">
-                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-neutral-400">£</span>
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-base text-neutral-400">£</span>
                       <input
                         id="loan-amount"
                         type="number"
                         value={amount ?? ""}
                         onChange={(e) => setAmount(e.target.value === "" ? null : Number(e.target.value))}
-                        className="w-28 rounded-lg border border-neutral-200 py-1 pl-5 pr-2 text-right text-sm font-bold text-neutral-900 focus:border-primary-700 focus:outline-none"
+                        className="w-32 rounded-lg border border-neutral-200 py-2 pl-6 pr-3 text-right text-base font-bold text-neutral-900 focus:border-primary-700 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -211,9 +211,9 @@ export default function Calculator() {
                     step={1000}
                     value={amount ?? 0}
                     onChange={(e) => setAmount(Number(e.target.value))}
-                    className="mt-3 w-full accent-secondary-500"
+                    className="mt-4 w-full accent-secondary-500"
                   />
-                  <div className="mt-1 flex justify-between text-xs text-neutral-500">
+                  <div className="mt-1.5 flex justify-between text-sm text-neutral-500">
                     <span>£1k</span>
                     <span>£500k</span>
                   </div>
@@ -221,10 +221,10 @@ export default function Calculator() {
 
                 <div>
                   <div className="flex items-center justify-between">
-                    <label htmlFor="loan-term" className="text-sm font-medium text-neutral-700">
+                    <label htmlFor="loan-term" className="text-base font-medium text-neutral-700">
                       Loan term
                     </label>
-                    <span className="text-sm font-bold text-primary-700">{months} months</span>
+                    <span className="text-base font-bold text-primary-700">{months} months</span>
                   </div>
                   <input
                     id="loan-term"
@@ -234,17 +234,17 @@ export default function Calculator() {
                     step={1}
                     value={months ?? 1}
                     onChange={(e) => setMonths(Number(e.target.value))}
-                    className="mt-3 w-full accent-secondary-500"
+                    className="mt-4 w-full accent-secondary-500"
                   />
-                  <div className="mt-1 flex justify-between text-xs text-neutral-500">
+                  <div className="mt-1.5 flex justify-between text-sm text-neutral-500">
                     <span>1 month</span>
                     <span>72 months</span>
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-neutral-700">Interest rate</label>
-                  <div className="mt-3 grid grid-cols-2 gap-2">
+                  <label className="text-base font-medium text-neutral-700">Interest rate</label>
+                  <div className="mt-4 grid grid-cols-2 gap-2.5">
                     {RATE_TYPES.map(({ type, defaultValue, label }) => (
                       <button
                         key={type}
@@ -253,7 +253,7 @@ export default function Calculator() {
                           setRateType(type);
                           setRateValue(defaultValue);
                         }}
-                        className={`rounded-lg px-2 py-2 text-xs font-bold transition-colors ${
+                        className={`rounded-lg px-3 py-3 text-sm font-bold transition-colors ${
                           rateType === type
                             ? "bg-primary-700 text-white shadow-sm"
                             : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
@@ -263,30 +263,30 @@ export default function Calculator() {
                       </button>
                     ))}
                   </div>
-                  <div className="relative mt-2">
+                  <div className="relative mt-3">
                     <input
                       type="number"
                       value={rateValue ?? ""}
                       onChange={(e) => setRateValue(e.target.value === "" ? null : Number(e.target.value))}
                       step={0.01}
-                      className="w-full rounded-lg border border-neutral-200 py-2.5 pl-3 pr-8 text-sm font-bold text-neutral-900 focus:border-primary-700 focus:outline-none"
+                      className="w-full rounded-lg border border-neutral-200 py-3.5 pl-4 pr-9 text-base font-bold text-neutral-900 focus:border-primary-700 focus:outline-none"
                     />
-                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-neutral-400">
+                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-base text-neutral-400">
                       {rateType === "Factor Rate" ? "x" : "%"}
                     </span>
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-neutral-50 p-4 ring-1 ring-neutral-100">
-                  <label className="text-sm font-medium text-neutral-700">Arrangement fee</label>
-                  <div className="mt-3 grid grid-cols-2 rounded-lg bg-white p-1 ring-1 ring-neutral-200">
+                <div className="rounded-2xl bg-neutral-50 p-5 ring-1 ring-neutral-100">
+                  <label className="text-base font-medium text-neutral-700">Arrangement fee</label>
+                  <div className="mt-4 grid grid-cols-2 rounded-lg bg-white p-1 ring-1 ring-neutral-200">
                     <button
                       type="button"
                       onClick={() => {
                         setFeeType("percentage");
                         setFeeValue(2.0);
                       }}
-                      className={`rounded-md py-1.5 text-xs font-bold transition-colors ${
+                      className={`rounded-md py-2.5 text-sm font-bold transition-colors ${
                         feeType === "percentage" ? "bg-primary-700 text-white" : "text-neutral-500"
                       }`}
                     >
@@ -298,7 +298,7 @@ export default function Calculator() {
                         setFeeType("fixed");
                         setFeeValue(500);
                       }}
-                      className={`rounded-md py-1.5 text-xs font-bold transition-colors ${
+                      className={`rounded-md py-2.5 text-sm font-bold transition-colors ${
                         feeType === "fixed" ? "bg-primary-700 text-white" : "text-neutral-500"
                       }`}
                     >
@@ -307,8 +307,8 @@ export default function Calculator() {
                   </div>
 
                   {feeType === "percentage" ? (
-                    <div className="mt-3">
-                      <div className="flex justify-between text-xs font-bold text-neutral-600">
+                    <div className="mt-4">
+                      <div className="flex justify-between text-sm font-bold text-neutral-600">
                         <span>0%</span>
                         <span className="text-primary-700">{feeValue}%</span>
                         <span>50%</span>
@@ -320,17 +320,17 @@ export default function Calculator() {
                         step={0.1}
                         value={feeValue ?? 0}
                         onChange={(e) => setFeeValue(Number(e.target.value))}
-                        className="mt-2 w-full accent-secondary-500"
+                        className="mt-2.5 w-full accent-secondary-500"
                       />
                     </div>
                   ) : (
-                    <div className="relative mt-3">
-                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-neutral-400">£</span>
+                    <div className="relative mt-4">
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-base text-neutral-400">£</span>
                       <input
                         type="number"
                         value={feeValue ?? ""}
                         onChange={(e) => setFeeValue(e.target.value === "" ? null : Number(e.target.value))}
-                        className="w-full rounded-lg border border-neutral-200 py-2 pl-6 pr-3 text-sm font-bold text-neutral-900 focus:border-primary-700 focus:outline-none"
+                        className="w-full rounded-lg border border-neutral-200 py-3 pl-7 pr-4 text-base font-bold text-neutral-900 focus:border-primary-700 focus:outline-none"
                       />
                     </div>
                   )}
@@ -442,37 +442,46 @@ export default function Calculator() {
                   Cost breakdown
                 </p>
                 <div className="h-64 w-full">
-                  <ResponsiveContainer width="100%" height={256}>
-                    <PieChart>
-                      <Pie
-                        data={chartData}
-                        innerRadius={70}
-                        outerRadius={90}
-                        paddingAngle={5}
-                        dataKey="value"
-                        stroke="none"
-                      >
-                        {chartData.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                      </Pie>
-                      <Tooltip
-                        formatter={(value) => `£${formatNumber(Number(value))}`}
-                        contentStyle={{
-                          borderRadius: "12px",
-                          border: "none",
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-                          fontWeight: "bold",
-                        }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        height={36}
-                        iconType="circle"
-                        formatter={(value) => <span className="text-xs font-semibold text-neutral-600">{value}</span>}
-                      />
-                    </PieChart>
-                  </ResponsiveContainer>
+                  {chartData.length > 0 ? (
+                    <ResponsiveContainer width="100%" height={256}>
+                      <PieChart>
+                        <Pie
+                          data={chartData}
+                          innerRadius={70}
+                          outerRadius={90}
+                          paddingAngle={5}
+                          dataKey="value"
+                          stroke="none"
+                        >
+                          {chartData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={entry.color} />
+                          ))}
+                        </Pie>
+                        <Tooltip
+                          formatter={(value) => `£${formatNumber(Number(value))}`}
+                          contentStyle={{
+                            borderRadius: "12px",
+                            border: "none",
+                            boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                            fontWeight: "bold",
+                          }}
+                        />
+                        <Legend
+                          verticalAlign="bottom"
+                          height={36}
+                          iconType="circle"
+                          formatter={(value) => <span className="text-xs font-semibold text-neutral-600">{value}</span>}
+                        />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  ) : (
+                    <div className="flex h-full flex-col items-center justify-center gap-3 text-center">
+                      <PieChartIcon className="h-8 w-8 text-neutral-300" />
+                      <p className="max-w-[220px] text-sm text-neutral-400">
+                        Enter a loan amount to see your cost breakdown
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -484,20 +493,27 @@ export default function Calculator() {
               transition={{ delay: 0.1 }}
               className="flex flex-1 flex-col"
             >
-              <div className="flex flex-1 flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-200">
-                <p className="text-base font-bold text-neutral-900">Rate breakdown</p>
+              <div className="flex flex-1 flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-neutral-200 sm:p-8">
+                <p className="text-lg font-bold text-neutral-900">Rate breakdown</p>
                 <div className="mt-3 flex flex-1 flex-col justify-between">
-                  {comparisonData
-                    ? comparisonData.map((item) => (
-                        <div
-                          key={item.name}
-                          className="flex items-center justify-between border-b border-neutral-100 py-2.5 last:border-0"
-                        >
-                          <span className="text-sm font-medium text-neutral-500">{item.name}</span>
-                          <span className="text-sm font-bold text-neutral-900">{item.value}</span>
-                        </div>
-                      ))
-                    : null}
+                  {comparisonData ? (
+                    comparisonData.map((item) => (
+                      <div
+                        key={item.name}
+                        className="flex items-center justify-between border-b border-neutral-100 py-3.5 last:border-0"
+                      >
+                        <span className="text-base font-medium text-neutral-500">{item.name}</span>
+                        <span className="text-base font-bold text-neutral-900">{item.value}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="flex flex-1 flex-col items-center justify-center gap-3 text-center">
+                      <CalculatorIcon className="h-8 w-8 text-neutral-300" />
+                      <p className="max-w-[220px] text-sm text-neutral-400">
+                        Enter your loan details to see rate comparisons
+                      </p>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -508,22 +524,25 @@ export default function Calculator() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-primary-950 p-8 text-center sm:p-10"
+          className="relative overflow-hidden rounded-3xl bg-primary-950 p-10 text-center sm:p-14"
         >
           <div
-            className="pointer-events-none absolute -top-24 right-0 h-64 w-64 rounded-full bg-secondary-500/20 blur-3xl"
+            className="pointer-events-none absolute -top-24 right-0 h-72 w-72 rounded-full bg-secondary-500/20 blur-3xl"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute -bottom-24 left-0 h-64 w-64 rounded-full bg-primary-500/20 blur-3xl"
+            className="pointer-events-none absolute -bottom-24 left-0 h-72 w-72 rounded-full bg-primary-500/20 blur-3xl"
             aria-hidden
           />
-          <div className="relative mx-auto flex max-w-xl flex-col items-center gap-3">
-            <h3 className="text-2xl font-bold text-white">Ready to proceed?</h3>
-            <p className="text-sm text-primary-200">
+          <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-5">
+            <h3 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to proceed?</h3>
+            <p className="max-w-xl text-base text-primary-100 sm:text-lg">
               Check your eligibility in 60 seconds with no impact on your credit score.
             </p>
-            <CheckEligibilityButton variant="secondary" size="lg" className="mt-2" />
+            <CheckEligibilityButton variant="secondary" size="lg" className="mt-2">
+              Check Eligibility
+              <ArrowRight className="h-4 w-4" />
+            </CheckEligibilityButton>
           </div>
         </motion.div>
       </div>
