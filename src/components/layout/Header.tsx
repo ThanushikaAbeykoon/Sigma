@@ -10,6 +10,7 @@ import AboutDropdownVisual from "@/components/layout/AboutDropdownVisual";
 import SearchBar from "@/components/layout/SearchBar";
 import CheckEligibilityButton from "@/components/eligibility/CheckEligibilityButton";
 import { solutions } from "@/data/solutions";
+import { otherSolutions } from "@/data/otherSolutions";
 import { industries } from "@/data/industries";
 
 const navLinks = [
@@ -21,6 +22,14 @@ const navLinks = [
 const fundingItems = solutions.map((solution) => ({
   key: solution.slug,
   href: `/funding-options#${solution.slug}`,
+  icon: solution.icon,
+  title: solution.name,
+  description: solution.tagline,
+}));
+
+const otherSolutionItems = otherSolutions.map((solution) => ({
+  key: solution.slug,
+  href: `/other-solutions/${solution.slug}`,
   icon: solution.icon,
   title: solution.name,
   description: solution.tagline,
@@ -54,6 +63,7 @@ const aboutItems = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
+  const [mobileOtherSolutionsOpen, setMobileOtherSolutionsOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const pathname = usePathname();
@@ -63,6 +73,7 @@ export default function Header() {
     setLastPathname(pathname);
     setOpen(false);
     setMobileSolutionsOpen(false);
+    setMobileOtherSolutionsOpen(false);
     setMobileIndustriesOpen(false);
     setMobileAboutOpen(false);
   }
@@ -81,6 +92,7 @@ export default function Header() {
 
         <nav className="hidden items-center gap-0.5 lg:flex xl:gap-1">
           <NavDropdown label="Funding Options" items={fundingItems} />
+          <NavDropdown label="Other Solutions" items={otherSolutionItems} />
           <NavDropdown
             label="Industries"
             items={industryItems}
@@ -145,6 +157,35 @@ export default function Header() {
                     <Link
                       key={solution.slug}
                       href={`/funding-options#${solution.slug}`}
+                      className="rounded-lg px-3 py-2 text-sm text-neutral-600 hover:bg-primary-50 hover:text-primary-800"
+                    >
+                      {solution.name}
+                    </Link>
+                  ))}
+                </div>
+              ) : null}
+            </div>
+
+            <div>
+              <button
+                type="button"
+                onClick={() => setMobileOtherSolutionsOpen((v) => !v)}
+                aria-expanded={mobileOtherSolutionsOpen}
+                className="flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-base font-medium text-neutral-700 hover:bg-primary-50 hover:text-primary-800"
+              >
+                Other Solutions
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${
+                    mobileOtherSolutionsOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {mobileOtherSolutionsOpen ? (
+                <div className="ml-2 flex flex-col gap-0.5 border-l border-neutral-200 pl-4 pb-2">
+                  {otherSolutions.map((solution) => (
+                    <Link
+                      key={solution.slug}
+                      href={`/other-solutions/${solution.slug}`}
                       className="rounded-lg px-3 py-2 text-sm text-neutral-600 hover:bg-primary-50 hover:text-primary-800"
                     >
                       {solution.name}
