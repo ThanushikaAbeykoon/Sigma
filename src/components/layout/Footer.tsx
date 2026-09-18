@@ -101,24 +101,41 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col gap-4 py-6 text-xs text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} Sigma Business Finance Ltd. All rights
-            reserved.
-          </p>
-          <p className="max-w-2xl leading-relaxed">
-            Sigma Business Finance is a credit broker, not a lender, and works
-            with a panel of lenders. We may receive a commission from our
-            lending partners. Registered in England &amp; Wales.
-          </p>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-neutral-300">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-neutral-300">
-              Terms
-            </Link>
+        <div className="container-page flex flex-col gap-4 py-6 text-xs text-neutral-500">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-8">
+            <p className="shrink-0 whitespace-nowrap">
+              © {new Date().getFullYear()} Sigma Business Finance Ltd. All
+              rights reserved.
+            </p>
+            <p className="min-w-0 flex-1 leading-relaxed">
+              Sigma Business Finance is a credit broker, not a lender, and works
+              with a panel of lenders. We may receive a commission from our
+              lending partners. Registered in England &amp; Wales.
+            </p>
+            <div className="flex shrink-0 gap-4">
+              <Link href="/privacy" className="whitespace-nowrap hover:text-neutral-300">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="whitespace-nowrap hover:text-neutral-300">
+                Terms
+              </Link>
+              <Link href="/cookie-policy" className="whitespace-nowrap hover:text-neutral-300">
+                Cookie Policy
+              </Link>
+            </div>
           </div>
+
+          <p className="border-t border-white/5 pt-4 text-center text-neutral-600">
+            Created by{" "}
+            <a
+              href="https://whiterock.lk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-neutral-300"
+            >
+              Whiterock Global Solutions Pvt Ltd
+            </a>
+          </p>
         </div>
       </div>
     </footer>
