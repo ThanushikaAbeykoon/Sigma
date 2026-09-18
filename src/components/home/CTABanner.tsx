@@ -17,13 +17,21 @@ export default function CTABanner() {
           Speak to a funding specialist today, or check your eligibility online
           in under a minute — no cost, no obligation.
         </p>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CheckEligibilityButton size="lg">
+        <div className="flex w-full flex-row gap-2.5 sm:w-auto sm:gap-3">
+          <CheckEligibilityButton
+            size="lg"
+            className="flex-1 !px-3.5 !py-2.5 !text-sm sm:flex-initial sm:!px-7 sm:!py-3.5 sm:!text-base"
+          >
             Check Eligibility
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </CheckEligibilityButton>
-          <Button href="tel:01518373528" variant="white" size="lg">
-            <PhoneCall className="h-4 w-4" />
+          <Button
+            href="tel:01518373528"
+            variant="white"
+            size="lg"
+            className="flex-1 !px-3.5 !py-2.5 !text-sm sm:flex-initial sm:!px-7 sm:!py-3.5 sm:!text-base"
+          >
+            <PhoneCall className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             0151 837 3528
           </Button>
         </div>

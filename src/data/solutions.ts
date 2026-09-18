@@ -47,6 +47,8 @@ export type Solution = {
   // --- detail page: hero section ---
   heroTitle: string;
   heroDescription: string;
+  heroGif?: string;
+  heroGifScale?: number;
 
   // --- detail page: intro / benefits section ---
   introTitle: string;
@@ -80,7 +82,8 @@ export const solutions: Solution[] = [
     ],
     heroTitle: "Business finance that fits how you actually trade",
     heroDescription:
-      "Unsecured and secured business loans from £10k to £2m, structured around your cash flow rather than a one-size-fits-all repayment plan — decisions in as little as 24 hours.",
+      "Unsecured and secured business loans from £10k to £2m, structured around your cash flow — decisions in as little as 24 hours.",
+    heroGif: "/gifs/business-loans.gif?v=5",
     introTitle: "Getting the right business loan made simple",
     introDescription:
       "A business loan gives you a lump sum today, repaid over an agreed term — used to fund stock, hire staff, launch a marketing push, or simply smooth out cash flow. We compare secured and unsecured options across our lender panel so the structure fits your business, not the other way round.",
@@ -134,6 +137,7 @@ export const solutions: Solution[] = [
     heroTitle: "Turn unpaid invoices into working capital today",
     heroDescription:
       "Release up to 90% of the value of your outstanding invoices immediately, instead of waiting 30, 60 or 90 days to get paid.",
+    heroGif: "/gifs/invoice-finance.gif?v=5",
     introTitle: "How invoice finance works",
     introDescription:
       "Invoice finance advances you cash against invoices you've already issued, so your cash flow isn't held hostage by customer payment terms. As your sales ledger grows, so does the facility — with the balance settled once your customer pays.",
@@ -180,9 +184,10 @@ export const solutions: Solution[] = [
       "Preserve capital for other areas of the business",
       "New and used assets, including private sales",
     ],
-    heroTitle: "Fund the equipment your business needs, without draining reserves",
+    heroTitle: "Fund equipment without draining your reserves",
     heroDescription:
-      "Spread the cost of vehicles, machinery, technology and other business assets over time — preserving working capital for everything else.",
+      "Spread the cost of vehicles, machinery and technology over time — preserving working capital for everything else.",
+    heroGif: "/gifs/asset-finance.gif?v=5",
     introTitle: "How asset finance works",
     introDescription:
       "Rather than paying the full cost of an asset upfront, asset finance lets you spread payments over an agreed term while you use the equipment to generate revenue. Facilities are available for new and used assets, including private sales.",
@@ -232,6 +237,7 @@ export const solutions: Solution[] = [
     heroTitle: "Funding that flexes with your card revenue",
     heroDescription:
       "An advance against future card sales, repaid as a small percentage of turnover — with no fixed monthly repayment to worry about.",
+    heroGif: "/gifs/merchant-cash-advance.gif?v=5",
     introTitle: "How a merchant cash advance works",
     introDescription:
       "Rather than a fixed loan repayment, a merchant cash advance is repaid automatically as a percentage of your daily card takings. When trade is quiet, repayments fall; when trade picks up, they rise — so the facility moves with your business.",
@@ -280,6 +286,7 @@ export const solutions: Solution[] = [
     heroTitle: "Revenue-based funding that flexes with your turnover",
     heroDescription:
       "A lump sum advance repaid through small, regular payments linked to your overall business revenue — not just card sales.",
+    heroGif: "/gifs/business-cash-advance.gif?v=5",
     introTitle: "How a business cash advance works",
     introDescription:
       "Similar to a merchant cash advance but based on total business revenue rather than card takings alone, this makes it accessible to businesses without significant card sales — repayments scale automatically as turnover rises or falls.",
@@ -325,9 +332,10 @@ export const solutions: Solution[] = [
       "Owner-occupier premises across most sectors",
       "Fixed and variable rate options available",
     ],
-    heroTitle: "Purchase, refinance or release equity from your premises",
+    heroTitle: "Purchase, refinance or release equity from property",
     heroDescription:
       "Competitive commercial mortgages for businesses buying, refinancing or releasing capital from the property they trade from.",
+    heroGif: "/gifs/commercial-property-finance.gif?v=5",
     introTitle: "How commercial property finance works",
     introDescription:
       "A commercial mortgage lets you purchase or refinance the premises your business operates from, typically up to 75% loan-to-value, with fixed or variable rate options over terms of up to 30 years.",
@@ -373,9 +381,11 @@ export const solutions: Solution[] = [
       "Development finance released in stages against build costs",
       "Portfolio and buy-to-let finance for investors",
     ],
-    heroTitle: "Development and investment funding for property professionals",
+    heroTitle: "Development finance for property professionals",
     heroDescription:
       "Bridging, development and portfolio finance for property investors and developers — from single refurbishments to ground-up builds.",
+    heroGif: "/gifs/property-finance.gif?v=5",
+    heroGifScale: 1.4,
     introTitle: "How property finance works",
     introDescription:
       "Property finance covers short-term and project-based funding for professionals working with property as an investment — released in stages against build costs, or as a lump sum against a portfolio.",
@@ -421,9 +431,10 @@ export const solutions: Solution[] = [
       "Competitive rates versus standard unsecured lending",
       "Available to viable businesses across most sectors",
     ],
-    heroTitle: "Government-backed lending to fuel your next stage of growth",
+    heroTitle: "Government-backed lending to fuel your growth",
     heroDescription:
-      "Access the UK Growth Guarantee Scheme to borrow for expansion, working capital or asset purchase, backed by a government guarantee to the lender.",
+      "Access the UK Growth Guarantee Scheme to borrow for growth — backed by a government guarantee.",
+    heroGif: "/gifs/growth-guarantee-scheme.gif?v=5",
     introTitle: "How the Growth Guarantee Scheme works",
     introDescription:
       "Delivered through accredited lenders and backed by the British Business Bank, the scheme gives lenders a partial government guarantee — often unlocking finance for viable businesses that might not otherwise meet standard lending criteria.",
@@ -469,9 +480,10 @@ export const solutions: Solution[] = [
       "Suitable where standard lending criteria aren't met",
       "Applicable across most viable UK sectors",
     ],
-    heroTitle: "Government-backed support to stabilise and rebuild",
+    heroTitle: "Government-backed support to rebuild and grow",
     heroDescription:
-      "Lending to help businesses navigating a period of disruption stabilise cash flow, restructure and rebuild — backed by a government guarantee to the lender.",
+      "Lending to help businesses navigating disruption stabilise cash flow, restructure and rebuild — backed by a government guarantee.",
+    heroGif: "/gifs/recovery-loan-scheme.gif?v=5",
     introTitle: "How the Recovery Loan Scheme works",
     introDescription:
       "Designed for businesses that have faced disruption but remain viable, the scheme uses a government-backed guarantee to help lenders support recovery lending where standard criteria might not otherwise be met.",
@@ -519,7 +531,8 @@ export const solutions: Solution[] = [
     ],
     heroTitle: "On-demand credit that flexes with your needs",
     heroDescription:
-      "An agreed credit limit you can draw down, repay and reuse whenever you need it — like a flexible overdraft built for growing businesses.",
+      "A flexible credit limit you can draw down, repay and reuse whenever your business needs it.",
+    heroGif: "/gifs/revolving-credit-facility.gif?v=5",
     introTitle: "How a revolving credit facility works",
     introDescription:
       "Once approved, you can draw funds up to an agreed limit whenever needed, repay them, and draw again — only paying interest on the amount you've actually used, not the full facility.",
@@ -568,6 +581,7 @@ export const solutions: Solution[] = [
     heroTitle: "Release equity and simplify your repayments",
     heroDescription:
       "Refinance existing debt or assets to release equity, lower your rate, or combine multiple repayments into one manageable facility.",
+    heroGif: "/gifs/refinance.gif?v=5",
     introTitle: "How refinancing and consolidation work",
     introDescription:
       "Refinancing replaces an existing facility — or several — with a new one, often on better terms, releasing equity from assets you already own or combining multiple repayments into a single, simpler facility.",

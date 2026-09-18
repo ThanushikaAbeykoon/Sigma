@@ -24,15 +24,43 @@ export default function FundingSolutionPageTemplate({ solution }: FundingSolutio
     { label: "Decision", value: solution.decision },
   ];
 
+  const visual = solution.heroGif ? (
+    <div className="relative flex h-48 w-48 items-center justify-center sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80">
+      <div
+        className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent blur-2xl"
+        aria-hidden
+      />
+      <img
+        src={solution.heroGif}
+        alt=""
+        className="relative h-full w-full object-contain drop-shadow-2xl"
+        style={solution.heroGifScale ? { transform: `scale(${solution.heroGifScale})` } : undefined}
+      />
+    </div>
+  ) : undefined;
+
   return (
     <>
-      <PageHero eyebrow={solution.name} title={solution.heroTitle} description={solution.heroDescription}>
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <CheckEligibilityButton size="lg">
+      <PageHero
+        eyebrow={solution.name}
+        title={solution.heroTitle}
+        description={solution.heroDescription}
+        visual={visual}
+      >
+        <div className="flex w-full flex-row gap-2.5 sm:w-auto sm:gap-3">
+          <CheckEligibilityButton
+            size="lg"
+            className="flex-1 !px-3.5 !py-2.5 !text-sm sm:flex-initial sm:!px-7 sm:!py-3.5 sm:!text-base"
+          >
             Check Eligibility
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </CheckEligibilityButton>
-          <Button href="tel:01518373528" variant="white" size="lg">
+          <Button
+            href="tel:01518373528"
+            variant="white"
+            size="lg"
+            className="flex-1 !px-3.5 !py-2.5 !text-sm sm:flex-initial sm:!px-7 sm:!py-3.5 sm:!text-base"
+          >
             0151 837 3528
           </Button>
         </div>
@@ -46,14 +74,12 @@ export default function FundingSolutionPageTemplate({ solution }: FundingSolutio
           ))}
         </div>
 
-        <div className="mt-2 grid grid-cols-3 gap-3 sm:max-w-md">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-sm">
           {facts.map((fact) => (
-            <div key={fact.label} className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 backdrop-blur-md">
-              <p className="text-[11px] font-medium uppercase tracking-wide text-primary-300">
-                {fact.label}
-              </p>
-              <p className="text-sm font-bold text-white">{fact.value}</p>
-            </div>
+            <span key={fact.label} className="text-primary-200">
+              <span className="text-primary-400">{fact.label}:</span>{" "}
+              <span className="font-semibold text-white">{fact.value}</span>
+            </span>
           ))}
         </div>
       </PageHero>

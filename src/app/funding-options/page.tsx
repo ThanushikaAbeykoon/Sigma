@@ -19,6 +19,19 @@ export default function FundingOptionsPage() {
         eyebrow="Funding Options"
         title="A finance solution for every stage of business"
         description="We work across a panel of 60+ specialist lenders to match you with the right product — not just the first one available."
+        visual={
+          <div className="relative flex h-72 w-72 items-center justify-center sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[26rem] lg:w-[26rem] xl:h-[30rem] xl:w-[30rem]">
+            <div
+              className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent blur-2xl"
+              aria-hidden
+            />
+            <img
+              src="/gifs/funding-options.gif?v=5"
+              alt=""
+              className="relative h-full w-full object-contain drop-shadow-2xl"
+            />
+          </div>
+        }
       />
 
       <section className="py-20 sm:py-28">

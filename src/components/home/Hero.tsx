@@ -47,12 +47,20 @@ export default function Hero() {
             upfront fees.
           </p>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <CheckEligibilityButton size="lg">
+          <div className="flex w-full flex-row gap-2.5 sm:w-auto sm:gap-3">
+            <CheckEligibilityButton
+              size="lg"
+              className="flex-1 !px-3.5 !py-2.5 !text-sm sm:flex-initial sm:!px-7 sm:!py-3.5 sm:!text-base"
+            >
               Check Your Eligibility
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </CheckEligibilityButton>
-            <Button href="/funding-options" variant="white" size="lg">
+            <Button
+              href="/funding-options"
+              variant="white"
+              size="lg"
+              className="flex-1 !px-3.5 !py-2.5 !text-sm sm:flex-initial sm:!px-7 sm:!py-3.5 sm:!text-base"
+            >
               Explore Solutions
             </Button>
           </div>
