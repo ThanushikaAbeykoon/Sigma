@@ -125,7 +125,7 @@ const pageResults: SearchResult[] = [
 ];
 
 const solutionResults: SearchResult[] = solutions.map((solution) => ({
-  href: `/funding-options#${solution.slug}`,
+  href: `/funding-options/${solution.slug}`,
   title: solution.name,
   category: "Funding Option",
   keywords: [

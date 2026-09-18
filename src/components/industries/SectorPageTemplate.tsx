@@ -160,7 +160,7 @@ export default function SectorPageTemplate({ industry }: SectorPageTemplateProps
             {sectorSolutions.map((solution) => (
               <Link
                 key={solution.slug}
-                href={`/funding-options#${solution.slug}`}
+                href={`/funding-options/${solution.slug}`}
                 className="group flex flex-col gap-3 rounded-2xl border border-neutral-200 bg-white p-6 transition-colors hover:border-primary-300"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-50 text-primary-700">

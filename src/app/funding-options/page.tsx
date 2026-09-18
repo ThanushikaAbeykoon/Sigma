@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import PageHero from "@/components/ui/PageHero";
 import Button from "@/components/ui/Button";
 import CTABanner from "@/components/home/CTABanner";
@@ -38,7 +39,9 @@ export default function FundingOptionsPage() {
                     Solution {String(index + 1).padStart(2, "0")}
                   </span>
                   <h2 className="mt-1 text-2xl font-bold text-neutral-900">
-                    {solution.name}
+                    <Link href={`/funding-options/${solution.slug}`} className="hover:text-primary-700">
+                      {solution.name}
+                    </Link>
                   </h2>
                   <p className="mt-1 text-neutral-600">{solution.tagline}</p>
                 </div>
@@ -79,6 +82,13 @@ export default function FundingOptionsPage() {
                 <Button href="/contact#eligibility" variant="secondary">
                   Check Eligibility
                 </Button>
+                <Link
+                  href={`/funding-options/${solution.slug}`}
+                  className="inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-primary-700 hover:text-primary-800"
+                >
+                  Learn more
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </div>
           ))}

@@ -65,7 +65,7 @@ export default function Footer() {
             {solutions.slice(0, 6).map((solution) => (
               <li key={solution.slug}>
                 <Link
-                  href={`/funding-options#${solution.slug}`}
+                  href={`/funding-options/${solution.slug}`}
                   className="hover:text-white"
                 >
                   {solution.name}

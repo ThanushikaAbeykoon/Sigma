@@ -24,7 +24,7 @@ export default function SolutionsGrid() {
           {solutions.map((solution) => (
             <Link
               key={solution.slug}
-              href={`/funding-options#${solution.slug}`}
+              href={`/funding-options/${solution.slug}`}
               className="group flex flex-col gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 transition-all hover:-translate-y-1 hover:border-primary-200 hover:bg-white hover:shadow-lg hover:shadow-primary-900/10"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-700 transition-colors group-hover:bg-primary-700 group-hover:text-white">
